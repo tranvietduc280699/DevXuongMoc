@@ -1,0 +1,17 @@
+# SQL Server Database
+Database/*.mdf
+Database/*.ldf
+*.mdf
+*.ldf
+
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# Node modules
+node_modules/
+
+# Environment
+.env
+.env.local

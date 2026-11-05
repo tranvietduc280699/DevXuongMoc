@@ -1,0 +1,154 @@
+@model IEnumerable<DevXuongMoc.Models.DBModel.AspNetUser>
+
+@{
+    ViewData["Title"] = "Người dùng";
+}
+<h1>Danh sách người dùng</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NormalizedUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NormalizedEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailConfirmed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PasswordHash)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecurityStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConcurrencyStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LockoutEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LockoutEnabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessFailedCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Articles)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuditLogs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactRequestNotes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactRequests)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NormalizedUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NormalizedEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.EmailConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PasswordHash)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.SecurityStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ConcurrencyStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PhoneNumberConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.TwoFactorEnabled)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.LockoutEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.LockoutEnabled)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.AccessFailedCount)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Articles)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.AuditLogs)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ContactRequestNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ContactRequests)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Roles)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
