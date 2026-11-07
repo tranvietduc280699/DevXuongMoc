@@ -1,4 +1,8 @@
 using DevXuongMoc.Data;
+using DevXuongMoc.Repositories.Implementations;
+using DevXuongMoc.Repositories.Interfaces;
+using DevXuongMoc.Services.Implementations;
+using DevXuongMoc.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevXuongMoc
@@ -15,6 +19,9 @@ namespace DevXuongMoc
             // cấu hình
             var DbContext = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<XuongMocContext>(options => options.UseSqlServer(DbContext));
+
+            builder.Services.AddScoped<IAspNetUserRepository, AspNetUserRepository>();
+            builder.Services.AddScoped<IAspNetUserService, AspNetUserService>();
 
             var app = builder.Build();
 
@@ -34,8 +41,10 @@ namespace DevXuongMoc
             app.UseAuthorization();
 
             app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                 name: "areas",
+                 pattern: "{area:exists}/{controller=AspNetUser}/{action=Index}/{id?}");
+
+            app.MapGet("/", () => Results.Redirect("/Admin/AspNetUser"));
 
             app.Run();
         }
