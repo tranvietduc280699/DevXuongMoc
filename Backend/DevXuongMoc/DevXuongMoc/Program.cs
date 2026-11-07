@@ -42,9 +42,9 @@ namespace DevXuongMoc
 
             app.MapControllerRoute(
                  name: "areas",
-                 pattern: "{area:exists}/{controller=AspNetUser}/{action=Index}/{id?}");
+                 pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
 
-            app.MapGet("/", () => Results.Redirect("/Admin/AspNetUser"));
+            app.MapGet("/", () => Results.Redirect("/Admin"));
 
             app.Run();
         }

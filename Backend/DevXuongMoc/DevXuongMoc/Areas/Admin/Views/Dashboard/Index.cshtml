@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Tổng quan";
+}
+
+<h3 class="mb-4">Tổng quan</h3>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="text-muted">Sản phẩm</div>
+                <div class="fs-2 fw-bold">0</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="text-muted">Bài viết</div>
+                <div class="fs-2 fw-bold">0</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="text-muted">Liên hệ mới</div>
+                <div class="fs-2 fw-bold text-danger">0</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="text-muted">Người dùng</div>
+                <div class="fs-2 fw-bold">0</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h5 class="mb-3">Lối tắt</h5>
+<div class="d-flex flex-wrap gap-2">
+    <a href="#" class="btn btn-primary disabled">+ Thêm sản phẩm</a>
+    <a href="#" class="btn btn-primary disabled">+ Viết bài</a>
+    <a href="#" class="btn btn-outline-secondary disabled">Hộp thư liên hệ</a>
+    <a asp-area="Admin" asp-controller="AspNetUser" asp-action="Index" class="btn btn-outline-secondary">Quản lý người dùng</a>
+</div>
